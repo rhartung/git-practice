@@ -1,6 +1,12 @@
 """Gonna put a whole lot of code in here - develop on a-remote-branch."""
 
 
+GOOD_DOGGO_DEEDS = {"wag tail", "sit", "stay", "lie down", "roll over", "shake",
+                    "save Timmy from well"}
+
+BAD_DOGGO_DEEDS = {"poop on carpet", "bark", "bite", "eat garbage", "attack mailman",
+                   "chew couch"}
+
 class Doggo(object):
     """A friendly, happy doggo."""
 
