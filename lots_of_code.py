@@ -10,13 +10,15 @@ BAD_DOGGO_DEEDS = {"poop on carpet", "bark", "bite", "eat garbage", "attack mail
 class Doggo(object):
     """A friendly, happy doggo."""
 
-    def __init__(self, breed, color, goodness_rating):
-        """Params: breed, and color are strings, goodness_rating is int from 1-10.
+    def __init__(self, name, breed, color, goodness_rating):
+        """Params: name, breed, and color are strings, goodness_rating starts as int from 1-10.
         """
         
+        self.name = name
         self.breed = breed
         self.color = color
         self.goodness_rating = goodness_rating
+        self.friends = set()
 
     def do_good(self):
         """Add +1 to goodness_rating for good doggo deeds."""
@@ -32,3 +34,19 @@ class Doggo(object):
         """Change doggo color."""
 
         self.color = color
+
+    def add_friends(self, dog_friends):
+        """Add list of friends to Doggo's set of friends."""
+
+        if type(dog_friends) != list:
+            return "dog_friends parameter must be in list format."
+
+        for friend in dog_friends:
+            if friend not in self.friends:
+                self.friends.add(friend)
+
+            else:
+                return "{} is already friends with {}!".format(self.name, friend.name)
+
+        return "{} has new friends!".format(self.name)
+
